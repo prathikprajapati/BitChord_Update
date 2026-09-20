@@ -6,6 +6,8 @@ plugins {
     id("org.jetbrains.kotlin.android")
     id("org.jetbrains.kotlin.plugin.compose")
     id("org.jetbrains.kotlin.plugin.serialization")
+    id("androidx.room") version "2.6.1"
+    id("com.google.devtools.ksp") version "1.9.20-1.0.14"
 }
 
 /**
@@ -75,6 +77,10 @@ android {
             "LISTEN_TOGETHER_SERVER",
             "\"${listenTogetherServer.replace("\\", "\\\\").replace("\"", "\\\"")}\"",
         )
+    }
+    
+    room {
+        schemaDirectory("$projectDir/schemas")
     }
 
     splits {
@@ -301,6 +307,11 @@ dependencies {
 
     // ---- Auth/session storage ----
     implementation("androidx.security:security-crypto:1.1.0-alpha06")
+
+    // ---- Room database for recommendations ----
+    implementation("androidx.room:room-runtime:2.6.1")
+    implementation("androidx.room:room-ktx:2.6.1")
+    ksp("androidx.room:room-compiler:2.6.1")
 
     // ---- JS module execution: QuickJS VM for style source plugins ----
     implementation("io.github.dokar3:quickjs-kt-android:1.0.5")

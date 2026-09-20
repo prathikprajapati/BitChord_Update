@@ -1,43 +1,76 @@
-# Gradle
-.gradle/
-/build/
-/app/build/
+```
+# Kotlin/Android build artifacts
+*.class
+*.dex
+*.jar
+*.war
+*.aar
+
+# Android specific
+*.apk
+*.ap_
 build/
-gradle-app.setting
-!gradle-wrapper.jar
-!gradle-wrapper.properties
-
-# Local configuration file (SDK path, etc.)
+.gradle/
 local.properties
+captures/
 
-# Kotlin
-.kotlin/
+# Dependencies
+node_modules/
+.libs/
 
-# Android Studio / IntelliJ
+# IDE
 .idea/
 *.iml
 *.ipr
 *.iws
-.navigation/
-captures/
-.externalNativeBuild/
-.cxx/
-*.hprof
+.vscode/
 
-# Log/OS files
+# Logs
 *.log
+
+# Environment
+.env
+.env.local
+*.env.*
+
+# Coverage
+coverage/
+htmlcov/
+.coverage
+
+# Python (if any)
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+.mypy_cache/
+
+# Compressed
+*.zip
+*.gz
+*.tar
+*.tgz
+*.bz2
+*.xz
+*.7z
+*.rar
+*.zst
+*.lz4
+*.lzh
+*.cab
+*.arj
+*.rpm
+*.deb
+*.Z
+*.lz
+*.lzo
+*.tar.gz
+*.tar.bz2
+*.tar.xz
+*.tar.zst
+
+# System
 .DS_Store
 Thumbs.db
-
-# Release signing — never commit the key or its passwords
-keystore.properties
-*.jks
-*.keystore
-
-# Project scratch / debug artifacts
-.shots/
-.tmp_verify/
-.debug/
-
-# AI agent configuration
-AGENTS.md
+```
